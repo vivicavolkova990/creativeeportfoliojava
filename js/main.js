@@ -76,7 +76,7 @@ const themeToggle = document.getElementById('themeToggle');
 if (themeToggle) {
     themeToggle.addEventListener('click', function() {
         document.body.classList.toggle('dark-theme');
-        themeToggle.innerHTML = document.body.classList.contains('dark-theme') 'Світла тема' : 'Темна тема';
+        themeToggle.innerHTML = document.body.classList.contains('dark-theme') 'Світла тема' ; 'Темна тема';
     });
 }
 const skills = [
