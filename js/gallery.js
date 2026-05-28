@@ -42,6 +42,7 @@ function createProjectCard(project, index) {
   col.setAttribute('data-category', project.category);
   let card = document.createElement('div');
   card.className = 'card h-100 project-card';
+  card.id = 'project-' + index + '-' + Date.now();
   let imgWrapper = document.createElement('div');
   imgWrapper.className = 'card-img-wrapper';
   let img = document.createElement('img');

@@ -63,7 +63,6 @@ function countCharacters() {
     }
 }
 
-// Спінер завантаження
 window.addEventListener('load', function() {
     const loader = document.getElementById('loader');
     if (loader) {

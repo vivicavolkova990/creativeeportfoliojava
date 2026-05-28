@@ -1,4 +1,3 @@
-// scroll-reveal.js
 document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('section[id]');
     if (!sections.length) return;
