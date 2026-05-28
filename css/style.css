@@ -1,6 +1,3 @@
-/* ============================================
-   Глобальні стилі та скидання
-   ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -24,9 +21,6 @@ body {
     flex: 1;
 }
 
-/* ============================================
-   Header (фіксований)
-   ============================================ */
 header {
     background-color: rgb(70, 196, 183);
     display: flex;
@@ -75,7 +69,6 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* Кнопка теми */
 #themeToggle {
     background-color: rgba(0,0,0,0.2);
     border: 1px solid white;
@@ -89,7 +82,6 @@ nav a:hover {
     background-color: rgba(255,255,255,0.3);
 }
 
-/* Пошук */
 .d-flex.ms-3 {
     display: flex;
     margin-left: 10px;
@@ -100,11 +92,8 @@ nav a:hover {
     padding: 6px 12px;
 }
 
-/* ============================================
-   Основний контент (компенсація фіксованого header)
-   ============================================ */
 main, .container, section[id] {
-    scroll-margin-top: 80px; /* для якорів */
+    scroll-margin-top: 80px; 
 }
 
 section[id] {
@@ -141,14 +130,10 @@ section[id] {
     50% { opacity: 0; }
 }
 
-/* Секції за замовчуванням */
 .about-section, .skills-section, .portfolio-section, .contact-section {
     background-color: transparent;
 }
 
-/* ============================================
-   Scroll Reveal
-   ============================================ */
 .hidden {
     opacity: 0;
     transform: translateY(30px);
@@ -159,9 +144,6 @@ section[id] {
     transform: translateY(0);
 }
 
-/* ============================================
-   Progress bars (навички)
-   ============================================ */
 .skill-item {
     margin-bottom: 1.5rem;
 }
@@ -181,10 +163,6 @@ section[id] {
     border-radius: 20px;
     transition: width 0.1s linear;
 }
-
-/* ============================================
-   Картки портфоліо (на index.html preview)
-   ============================================ */
 .card {
     background-color: rgba(70, 196, 183, 0.2);
     border: 2px solid rgba(255,255,255,0.5);
@@ -196,9 +174,6 @@ section[id] {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* ============================================
-   Форма контактів
-   ============================================ */
 .contact-card {
     background-color: #f4f8f9;
     border-radius: 20px;
@@ -219,9 +194,6 @@ section[id] {
     color: #155724;
 }
 
-/* ============================================
-   Footer
-   ============================================ */
 footer {
     background-color: rgb(28, 77, 72);
     color: rgb(70, 196, 183);
@@ -240,9 +212,6 @@ footer a:hover {
     color: white;
 }
 
-/* ============================================
-   Кнопка Scroll to top
-   ============================================ */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
@@ -264,9 +233,6 @@ footer a:hover {
     transform: translateY(-5px);
 }
 
-/* ============================================
-   Loader
-   ============================================ */
 .loader-container {
     position: fixed;
     top: 0;
@@ -292,9 +258,6 @@ footer a:hover {
     to { transform: rotate(360deg); }
 }
 
-/* ============================================
-   Toast повідомлення для візитів
-   ============================================ */
 .welcome-toast {
     position: fixed;
     bottom: 100px;
@@ -313,9 +276,6 @@ footer a:hover {
     100% { opacity: 0; visibility: hidden; }
 }
 
-/* ============================================
-   Lightbox (для галереї)
-   ============================================ */
 .lightbox-overlay {
     position: fixed;
     top: 0; left: 0;
@@ -372,9 +332,6 @@ footer a:hover {
     color: white;
 }
 
-/* ============================================
-   Темна тема
-   ============================================ */
 body.dark-theme {
     background-color: #1a1a2e;
     color: #e0e0e0;
@@ -422,9 +379,6 @@ body.dark-theme .welcome-toast {
     color: #1a1a2e;
 }
 
-/* ============================================
-   Стилі для сторінок портфоліо, блогу (збереження оригіналу)
-   ============================================ */
 .portfolio h1, .blog-section h1, .contact-section h1 {
     color: rgb(43, 91, 91);
     text-shadow: 2px 2px 2px rgba(25, 54, 54, 0.375);
