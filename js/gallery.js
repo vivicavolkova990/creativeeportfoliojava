@@ -135,20 +135,36 @@ function closeLightbox() {
   if (lightbox) lightbox.remove();
 }
 function initFilters() {
-  let filterButtons = document.querySelectorAll('.filter-btn');
-  if (!filterButtons.length) return;
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.remove('active', 'btn-primary');
-        b.classList.add('btn-outline-primary');
-      });
-      this.classList.add('active', 'btn-primary');
-      this.classList.remove('btn-outline-primary');
-      let category = this.getAttribute('data-category');
-      displayProjects(category);
+    let filterButtons = document.querySelectorAll('.filter-btn');
+    if (!filterButtons.length) return;
+    
+    let savedFilter = 'all';
+    if (typeof getGalleryFilter === 'function') {
+        savedFilter = getGalleryFilter();
+    }
+    displayProjects(savedFilter);
+    
+    filterButtons.forEach(btn => {
+        btn.classList.remove('active', 'btn-primary');
+        btn.classList.add('btn-outline-primary');
+        if (btn.getAttribute('data-category') === savedFilter) {
+            btn.classList.add('active', 'btn-primary');
+            btn.classList.remove('btn-outline-primary');
+        }
     });
-  });
+    
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterButtons.forEach(b => {
+                b.classList.remove('active', 'btn-primary');
+                b.classList.add('btn-outline-primary');
+            });
+            this.classList.add('active', 'btn-primary');
+            this.classList.remove('btn-outline-primary');
+            let category = this.getAttribute('data-category');
+            displayProjects(category);
+        });
+    });
 }
 function initSiteSearch() {
   let siteSearch = document.getElementById('siteSearch');
@@ -170,4 +186,18 @@ if (document.getElementById('gallery')) {
   displayProjects('all');
   initFilters();
   initSiteSearch();
+}
+function displayProjects(filter) {
+    let gallery = document.getElementById('gallery');
+    if (!gallery) return;
+    gallery.innerHTML = '';
+    for (let i = 0; i < projects.length; i++) {
+        if (filter === 'all' || projects[i].category === filter) {
+            let card = createProjectCard(projects[i], i);
+            gallery.appendChild(card);
+        }
+    }
+    if (typeof saveGalleryFilter === 'function') {
+        saveGalleryFilter(filter);
+    }
 }

@@ -1,702 +1,248 @@
+/* ============================================
+   Глобальні стилі та скидання
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     height: 100%;
-    margin: 0;
 }
-body{
+
+body {
     background-color: rgb(237, 252, 253);
     display: flex;
     flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.wrapper{
+
+.wrapper {
     flex: 1;
 }
-header{
+
+/* ============================================
+   Header (фіксований)
+   ============================================ */
+header {
     background-color: rgb(70, 196, 183);
-    justify-content: space-between;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     position: fixed;
     width: 100%;
-    top: -10px;
-    left: 0px;
-    padding: 5px;
-    margin: 10px 0px 20px;
-    box-shadow: 1px 1px 2px  rgba(64, 131, 120, 0.582);
-    z-index: 10;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    margin: 0;
+    box-shadow: 1px 1px 5px rgba(64, 131, 120, 0.5);
+    z-index: 1000;
 }
-.logo{
+
+.logo {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
-    font-size: 175%;
+    font-size: 1.75rem;
     color: rgb(227, 253, 255);
-    text-shadow: 2px 2px 3px  rgba(100, 130, 90, 0.582);
-    display: inline-block;
-}
-.firstbutton{
-    border-radius: 5px;
-    border-style:solid;
-    border-width: 1.2px;
-    border-color: rgb(227, 253, 255);
-    background-color: rgb(227, 253, 255);
-    color: rgb(43, 91, 91);
-    text-decoration: none;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-weight: bolder;
-     font-size: large;
-     text-transform: uppercase;
-     padding: 5px 10px;   
-    display: inline-block;
-    transition: background-color 0.3s ease,
-color 0.3s ease,
-box-shadow 0.3s ease;
-}
-.firstbutton:hover{
-    background: rgb(45, 117, 117);
-    color: rgb(227, 253, 255);
-    position: relative;
-    top: 1px;
-}
-.firstbutton:active{
-background-color: rgb(31, 51, 29);
-transform: translateY(2px);
-}
-.secondbutton{
-    border-radius: 5px;
-    border-style:solid;
-    border-width: 1.2px;
-    border-color: rgb(227, 253, 255);
-    background-color: rgb(227, 253, 255);
-    color: rgb(43, 91, 91);
-    text-decoration: none;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-weight: bolder;
-     font-size: large;
-     text-transform: uppercase;
-     padding: 5px 10px;   
-    display: inline-block;
-    transition: background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.secondbutton:hover{
-    background: rgb(45, 117, 117);
-    color: rgb(227, 253, 255);
-    position: relative;
-    top: 1px;
-}
-.secondbutton:active{
-background-color: rgb(31, 51, 29);
-transform: translateY(2px);
-}
-.thirdbutton{
-    border-radius: 5px;
-    border-style:solid;
-    border-width: 1.2px;
-    border-color: rgb(227, 253, 255);
-    background-color: rgb(227, 253, 255);
-    color: rgb(43, 91, 91);
-    text-decoration: none;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-weight: bolder;
-     font-size: large;
-     text-transform: uppercase;
-     padding: 5px 10px;   
-    display: inline-block;
-    transition: background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.thirdbutton:hover{
-    background: rgb(45, 117, 117);
-    color: rgb(227, 253, 255);
-    position: relative;
-    top: 1px;
-}
-.thirdbutton:active{
-background-color: rgb(31, 51, 29);
-transform: translateY(2px);
-}
-.fourthbutton{
-    border-radius: 5px;
-    border-style:solid;
-    border-width: 1.2px;
-    border-color: rgb(227, 253, 255);
-    background-color: rgb(227, 253, 255);
-    color: rgb(43, 91, 91);
-    text-decoration: none;
-     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-weight: bolder;
-     font-size: large;
-     text-transform: uppercase;
-     padding: 5px 10px;   
-    display: inline-block;
-    transition: background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-.fourthbutton:hover{
-    background: rgb(45, 117, 117);
-    color: rgb(227, 253, 255);
-    position: relative;
-    top: 1px;
-}
-.fourthbutton:active{
-background-color: rgb(31, 51, 29);
-transform: translateY(2px);
-}
-main {
-    position: relative;
-    text-align: center;
-    padding: 20px;
-    margin: 20px -10px 20px;
-    min-height: 35vh;
-    overflow: hidden;
-    flex: 1;
-}
-main::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: blur(8px);
-    transform: scale(1.1);
-    z-index: -1;
-}
-h1{
-    color: aliceblue;
-    text-transform: uppercase;
-    font-size: 250%;
-    text-shadow: 5px 5px 5px  rgba(64, 131, 120, 0.582);
-}
-h2{
-    color: aliceblue;
-    font-size: 200%;
-   text-shadow: 5px 5px 5px  rgba(64, 131, 120, 0.582);
-}
-.maininfo{
-    color: aliceblue;
-    background-color: rgba(70, 196, 183, 0.582);
-    font-size: 150%;
-   text-shadow: 5px 5px 5px  rgba(64, 131, 120, 0.582);   
-   border-radius: 5px;
-}
-@keyframes fadeInDown {
-0% {
-opacity: 0;
-transform: translateY(-30px);
-}
-100% {
-opacity: 1;
-transform: translateY(0);
-}
-}
-main h1 {
-animation: fadeInDown 1s ease-out;
-}
-main::before {
-animation: fadeInDown 1s ease-out;   
-}
-main h2 {
-animation: fadeInDown 1s ease-out 0.4s both;
-}
-.maininfo{
-animation: fadeInDown 1s ease-out 0.6s both;
-}
-.fifthbutton{
-animation: fadeInDown 1s ease-out 0.8s both;    
-}
-@keyframes fadeIn {
-0% {
-opacity: 0;
-}
-100% {
-opacity: 100;
-}
-}
-.myskills{
-animation: fadeIn 1s ease-out 0.8s both;
-}
-.thirdp{
-animation: fadeIn 1s ease-out 0.8s both;
-}
-.abtmeparagraph{
-animation: fadeIn 1s ease-out 0.8s both;    
+    text-shadow: 2px 2px 3px rgba(100, 130, 90, 0.5);
 }
 
-.fifthbutton{
-    border-radius: 5px;
-    border-style:solid;
-    border-width: 1.2px;
-    border-color: rgb(227, 253, 255);
-    background-color: rgb(227, 253, 255);
-    color: rgb(43, 91, 91);
-    text-decoration: none;
-     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     font-weight: bolder;
-     font-size: large;
-     text-transform: uppercase;
-     padding: 5px 10px;   
-    display: inline-block;
-    margin-top: 30px;
-    transition: background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
+nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.fifthbutton:hover{
-    background: rgb(45, 117, 117);
+
+nav a {
     color: rgb(227, 253, 255);
-    position: relative;
-    top: 1px;
-}
-.fifthbutton:active{
-background-color: rgb(31, 51, 29);
-transform: translateY(2px);
-}
-.myskills{  
-    background-color: rgb(70, 196, 183);
-    border-radius: 5px;
-    width: fit-content;
-    display: inline-block;
-    float: right;
-    margin: 0px 15px 10px;
-    width: 20%;
-    padding-bottom: 20px;
-}  
-.firstp{
-color: rgb(43, 91, 91);
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: bolder;
-font-size: 120%;
-text-shadow: 2px 2px 2px  rgba(64, 131, 120, 0.363);
-margin: 20px 20px;
-text-transform: uppercase;
-}
-.skill{
-  color: rgb(227, 253, 255);
-    font-family: "Times New Roman", Times, serif;
-    font-size: normal;
+    text-decoration: none;
     font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffc107;
+}
+
+.nav-link.active {
+    color: #ffc107 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Кнопка теми */
+#themeToggle {
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid white;
+    color: white;
+    border-radius: 20px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+#themeToggle:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Пошук */
+.d-flex.ms-3 {
+    display: flex;
+    margin-left: 10px;
+}
+#siteSearch {
+    border-radius: 20px;
+    border: none;
+    padding: 6px 12px;
+}
+
+/* ============================================
+   Основний контент (компенсація фіксованого header)
+   ============================================ */
+main, .container, section[id] {
+    scroll-margin-top: 80px; /* для якорів */
+}
+
+section[id] {
+    padding: 80px 20px 60px;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, rgb(70,196,183,0.9), rgb(45,117,117,0.9)), url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #ffc107;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Секції за замовчуванням */
+.about-section, .skills-section, .portfolio-section, .contact-section {
+    background-color: transparent;
+}
+
+/* ============================================
+   Scroll Reveal
+   ============================================ */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   Progress bars (навички)
+   ============================================ */
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+.progress {
+    background-color: #e9ecef;
+    border-radius: 20px;
+    height: 25px;
+    overflow: hidden;
+}
+.progress-bar {
+    background-color: #2E75B6;
+    width: 0%;
+    height: 100%;
+    line-height: 25px;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    transition: width 0.1s linear;
+}
+
+/* ============================================
+   Картки портфоліо (на index.html preview)
+   ============================================ */
+.card {
+    background-color: rgba(70, 196, 183, 0.2);
+    border: 2px solid rgba(255,255,255,0.5);
     border-radius: 15px;
-    background: rgb(43, 91, 91);
-      padding: 5px 10px;
-      margin: 10px;
-    width: 100px;
-    height: 20px;
-        text-shadow: 2px 2px 4px rgba(2, 60, 51, 0.412);
-    display:flex;
-    transition: background-color 0.3s ease,
-    color 0.3s ease,
-    box-shadow 0.3s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-.skill:hover{
-  background: rgb(227, 253, 255);
-  color: rgb(43, 91, 91);
-  box-shadow: none;
-  position: relative;
-  top: 1px;
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
-.firstelement{
-color: rgb(74, 156, 156);
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: normal;
-font-size: 120%;
-display: inline-block;
-width: 70%;
-text-decoration: none;
-text-align: justify;
+
+/* ============================================
+   Форма контактів
+   ============================================ */
+.contact-card {
+    background-color: #f4f8f9;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-.linkss{
-    color:rgb(74, 156, 156) ;
+.form-control:focus {
+    border-color: #3fb3a9;
+    box-shadow: 0 0 5px rgba(63,179,169,0.5);
 }
-.linkss:hover{
-    color:rgb(38, 80, 80) ;
+.error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 5px;
 }
-.thirdp{
-color: rgb(227, 253, 255);
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-font-weight: bolder;
-font-size: 150%;
-margin-top: -10px;
-margin-bottom: -5px;
-background-color: rgb(70, 196, 183);
-text-align: justify;
+#successMessage {
+    background-color: #d4edda;
+    color: #155724;
 }
-footer{
+
+/* ============================================
+   Footer
+   ============================================ */
+footer {
     background-color: rgb(28, 77, 72);
     color: rgb(70, 196, 183);
-display: flex;
-justify-content: center; 
-margin-top: 70px;
-margin-bottom: -10px;
-height: 35px;
-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 12px 20px;
+    margin-top: auto;
 }
-footer a{
+footer a {
     color: rgb(70, 196, 183);
-    margin: 5px 5px;
-}
-footer a:hover{
-    color: rgb(0, 0, 0);
-    top: 1;
-}
-.portfolio{
-    width: 90%;
-    max-width: 1100px;
-    margin: 50px auto;
-}
-.portfolio h1{
-    text-align: center;
-    margin-bottom: 40px;
-    color: rgb(43, 91, 91);
-    text-shadow: 2px 2px 2px rgba(25, 54, 54, 0.375);
-    animation: fadeInDown 1s ease-out 0.2s both;  
-}
-.card{
-    display: flex;
-    align-items: center;
-    background: rgba(70, 196, 183, 0.304);
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: aliceblue;
-    overflow: hidden;
-    box-shadow: 1px 2px 2px rgba(25, 54, 54, 0.375);
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 1s ease-out 0.8s both;  
-    
-}
-.card:hover{
-   border-color: rgba(25, 54, 54, 0.375);
-   transform: translateY(2px);
-}
-.card p{
-color: rgb(25, 54, 54) ;
-margin-left: 5px;
-margin-top: -25px;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: normal;
-}
-.card h2{
-    text-align: left;
-    color: rgb(43, 91, 91);
-    text-shadow: 1px 2px rgba(25, 54, 54, 0.375);
-    margin-left: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bolder;
-    text-transform: uppercase;
-}
-.card-image{
-    width: 40%;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    position:relative;
-}
-.overlay{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:rgba(0,0,0,0.4);
-    opacity:0;
-    transition:0.3s;
-}
-
-.card-image:hover .overlay{
-    opacity:1;
-}
-
-.details-btn{
-    background:#f4f8f9;
-    padding:10px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    color: #092b22;
-}
-.details-btn:hover{
-    background-color: #092b22;
-    color: #f4f8f9;
-    transform: translateY(2px);
-}
-.blog{
- background-image: url("../images/background1.png");
-}
-
-.dashboard{
- background-image: url("../images/background2.avif");
-}
-
-.artist{ 
-    background-image: url("../images/background3.avif");
-}
-.card-content{
-    width: 60%;
-    padding: 30px;
-}
-.blog-section h1{
-    text-align: center;
-    margin-top: 60px;
-    color: rgb(43, 91, 91);
-    text-shadow: 2px 2px 2px rgba(25, 54, 54, 0.375);
-    animation: fadeInDown 1s ease-out 0.2s both;  
-}
-.blog-section{
-    padding: 50px 0px;
-}
-.blog-layout {
-    display: flex;
-    gap: 30px;
-}
-.posts{
-    flex: 3;
-}
-.post-card{
-    background: rgba(70, 196, 183, 0.304);
-    border-radius: 15px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: aliceblue;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 1s ease-out 0.8s both;  
-}
-.post-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 2px 2px 2px rgba(0,0,0,0.08);
-    border-color: rgba(25, 54, 54, 0.375);
-}
-.post-card .date{
-    font-size: 14px;
-    color: rgb(97, 115, 109);
-}
-.post-card h2{
-    margin: 10px 0;
-    text-align: left;
-    color: rgb(43, 91, 91);
-    text-shadow: 1px 2px rgba(25, 54, 54, 0.375);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bolder;
-
-}
-.post-card p{
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: rgb(25, 54, 54);
-}
-.post-card a{
     text-decoration: none;
-    color: #3b6ea5;
-    font-weight: bold;
 }
-.sidebar{
-    flex: 1;
-}
-.sidebar-card{
-    background: rgb(43, 91, 91);
-    color: aliceblue;
-    padding: 20px;
-    border-radius: 12px;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #092b22;
-    margin-bottom: 25px;
-    box-shadow: 0px 6px 15px rgba(24, 50, 43, 0.05);
-    animation: fadeInDown 1s ease-out 0.8s both;  
-}
-.sidebar-card h3{
-    margin-bottom: 15px;
-    border-bottom: 2px solid #092b22;
-    padding-bottom: 5px;
-}
-.sidebar-card ul{
-    list-style: none;
-}
-.sidebar-card li{
-    margin-bottom: 10px;
-    color: rgb(177, 184, 189);
-    cursor: pointer;
-}
-.sidebar-card li:hover{
-    color: rgb(21, 44, 44);
-    top: 1px;
-}
-.contact-section{
-    text-align: center;
-    padding: 50px 20px;
-}
-.contact-section h1{
-     text-align: center;
-    margin-top: 60px;
-    color: rgb(43, 91, 91);
-    text-shadow: 2px 2px 2px rgba(25, 54, 54, 0.375);
-    animation: fadeInDown 1s ease-out 0.2s both;  
-}
-@keyframes fadeInUp {
-0% {
-opacity: 0;
-transform: translateY(30px);
-}
-100% {
-opacity: 100;
-transform: translateY(0px);
-}
-}
-.contact-card{
-    background-color: #f4f8f9;
-    max-width: 500px;
-    margin: auto;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    animation: fadeInUp 1s ease;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-label{
-    margin-top: 15px;
-    font-weight: bold;
-    color: #2f4f4f;
-}
-input,
-select,
-textarea{
-    margin-top: 5px;
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #cfdede;
-    font-size: 14px;
-    transition: 0.3s;
-}
-input:focus,
-select:focus,
-textarea:focus{
-    outline: none;
-    border-color: #3fb3a9;
-    box-shadow: 0 0 8px rgba(63,179,169,0.5);
-}
-textarea{
-    resize: none;
-    height: 100px;
-}
-button {
-    margin-top: 25px;
-    padding: 12px;
-    background-color: #3fb3a9;
+footer a:hover {
     color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-button:hover {
-    background-color: #2f8f87;
-    transform: translateY(-3px);
-}
-button:active {
-       background-color: rgba(63,179,169,0.5); 
-}
-@keyframes popupShow {
-0% { opacity: 0; transform: translateY(0px); }
-15% { opacity: 0; transform: translateY(20px); }
-85% { opacity: 1; transform: translateY(0); }
-100% { opacity: 0; transform: translateY(20px); }
-}
-.popup-banner {
-position: fixed;
-bottom: 20px; left: 50%;
-transform: translateX(-50%);
-animation: popupShow 5s ease forwards;
-    position: fixed;
-    bottom: 25px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: fit-content;
-    transform: translateX(-50%);
-    background: rgba(72, 179, 170, 0.95);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 12px;
-    font-size: 16px;
-    text-align: center;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-}
-.popup-btn{
-    background: white;
-    color: #2f6f73;
-    padding: 6px 14px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.popup-btn:hover{
-    background: #0f2725;
-    color: #f4f8f9;
-    transform: translateY(2px);
-}
-body {
-    background-color: #ffffff;
-    color: #333333;
-    transition: all 0.3s ease;
-}
-body.dark-theme {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-body.dark-theme header {
-    background-color: #2c2c2c !important;
-}
-body.dark-theme .card,
-body.dark-theme .post-card,
-body.dark-theme .contact-card,
-body.dark-theme .sidebar-card {
-    background-color: #2c2c2c;
-    color: #ffffff;
-    border-color: #444;
-}
-body.dark-theme footer {
-    background-color: #2c2c2c !important;
-}
-body.dark-theme .firstbutton,
-body.dark-theme .secondbutton,
-body.dark-theme .thirdbutton,
-body.dark-theme .fourthbutton,
-body.dark-theme .fifthbutton {
-    background-color: #444;
-    border-color: #666;
-    color: #eee;
-}
-body.dark-theme .firstbutton:hover{
-    background-color: #666;
-    color: #fff;
-}
-body.dark-theme .skill {
-    background-color: #444;
-    color: #eee;
-}
-body.dark-theme .error-message {
-    color: #ff6b6b;
 }
 
+/* ============================================
+   Кнопка Scroll to top
+   ============================================ */
 .scroll-top-btn {
     position: fixed;
     bottom: 30px;
@@ -711,27 +257,28 @@ body.dark-theme .error-message {
     font-size: 24px;
     cursor: pointer;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
 }
 .scroll-top-btn:hover {
     background-color: #D4A843;
     transform: translateY(-5px);
 }
+
+/* ============================================
+   Loader
+   ============================================ */
 .loader-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.95);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-}
-body.dark-theme .loader-container {
-    background: rgba(0,0,0,0.9);
 }
 .spinner {
     width: 50px;
@@ -744,63 +291,182 @@ body.dark-theme .loader-container {
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-top: 4px;
+
+/* ============================================
+   Toast повідомлення для візитів
+   ============================================ */
+.welcome-toast {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    z-index: 1100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: fadeOut 5s forwards;
 }
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* ============================================
+   Lightbox (для галереї)
+   ============================================ */
 .lightbox-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2000;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
 }
 .lightbox-content {
-  background: white;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 90%;
-  overflow: hidden;
-  position: relative;
-  animation: fadeIn 0.3s ease;
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    animation: fadeIn 0.3s ease;
 }
 .lightbox-content img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
 }
 .lightbox-close {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  background: rgba(0,0,0,0.5);
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .lightbox-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 16px;
 }
 .lightbox-nav button {
-  padding: 6px 20px;
-  border: 2px solid #2E75B6;
-  border-radius: 6px;
-  background: white;
-  color: #2E75B6;
-  cursor: pointer;
-  font-weight: 600;
+    padding: 6px 20px;
+    border: 2px solid #2E75B6;
+    border-radius: 6px;
+    background: white;
+    color: #2E75B6;
+    cursor: pointer;
+    font-weight: 600;
 }
 .lightbox-nav button:hover {
-  background: #2E75B6;
-  color: white;
+    background: #2E75B6;
+    color: white;
+}
+
+/* ============================================
+   Темна тема
+   ============================================ */
+body.dark-theme {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+}
+body.dark-theme header {
+    background-color: #16213e !important;
+}
+body.dark-theme .card,
+body.dark-theme .post-card,
+body.dark-theme .contact-card,
+body.dark-theme .sidebar-card {
+    background-color: #16213e;
+    color: #e0e0e0;
+    border-color: #2c2c54;
+}
+body.dark-theme footer {
+    background-color: #0f0f1a;
+}
+body.dark-theme .progress {
+    background-color: #2c2c54;
+}
+body.dark-theme .progress-bar {
+    background-color: #ffc107;
+    color: #1a1a2e;
+}
+body.dark-theme .btn-outline-light {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+body.dark-theme .lightbox-content {
+    background: #2c2c2c;
+    color: white;
+}
+body.dark-theme .lightbox-nav button {
+    background: #444;
+    color: white;
+    border-color: #ffc107;
+}
+body.dark-theme .lightbox-nav button:hover {
+    background: #ffc107;
+    color: #1a1a2e;
+}
+body.dark-theme .welcome-toast {
+    background-color: #ffc107;
+    color: #1a1a2e;
+}
+
+/* ============================================
+   Стилі для сторінок портфоліо, блогу (збереження оригіналу)
+   ============================================ */
+.portfolio h1, .blog-section h1, .contact-section h1 {
+    color: rgb(43, 91, 91);
+    text-shadow: 2px 2px 2px rgba(25, 54, 54, 0.375);
+}
+.post-card {
+    background: rgba(70, 196, 183, 0.2);
+    border-radius: 15px;
+    border: 2px solid aliceblue;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+.sidebar-card {
+    background: rgb(43, 91, 91);
+    color: aliceblue;
+    padding: 20px;
+    border-radius: 12px;
+}
+.sidebar-card li {
+    color: #cddde0;
+    cursor: pointer;
+}
+.sidebar-card li:hover {
+    color: #ffc107;
+}
+.filter-btn.active {
+    background-color: #2E75B6 !important;
+    color: white;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav {
+        justify-content: center;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    section[id] {
+        padding: 100px 15px 40px;
+    }
 }
